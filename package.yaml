@@ -1,0 +1,27 @@
+name:       dmtl
+version:    0.1.0.0
+github:     "noxabellus/dmtl"
+license:    Apache-2.0
+author:     "noxabellus"
+maintainer: "noxabellus@gmail.com"
+
+language: GHC2021
+
+default-extensions:
+    - LambdaCase
+    - BlockArguments
+    - TypeFamilies
+    - DataKinds
+    - QuantifiedConstraints
+
+extra-source-files:
+    - README.md
+
+dependencies:
+    - base
+
+ghc-options:
+    - -Wall
+
+library:
+    source-dirs: src

@@ -1,0 +1,47 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.36.0.
+--
+-- see: https://github.com/sol/hpack
+
+name:           dmtl
+version:        0.1.0.0
+homepage:       https://github.com/noxabellus/dmtl#readme
+bug-reports:    https://github.com/noxabellus/dmtl/issues
+author:         noxabellus
+maintainer:     noxabellus@gmail.com
+license:        Apache-2.0
+build-type:     Simple
+extra-source-files:
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/noxabellus/dmtl
+
+library
+  exposed-modules:
+      Control.Has
+      Control.Monad.Error.Dynamic
+      Control.Monad.Error.Dynamic.Class
+      Control.Monad.Reader.Dynamic
+      Control.Monad.Reader.Dynamic.Class
+      Control.Monad.State.Dynamic
+      Control.Monad.State.Dynamic.Class
+      Control.Monad.Trans.Dynamic
+      Control.Monad.Writer.Dynamic
+      Control.Monad.Writer.Dynamic.Class
+  other-modules:
+      Paths_dmtl
+  hs-source-dirs:
+      src
+  default-extensions:
+      LambdaCase
+      BlockArguments
+      TypeFamilies
+      DataKinds
+      QuantifiedConstraints
+  ghc-options: -Wall
+  build-depends:
+      base
+  default-language: GHC2021
