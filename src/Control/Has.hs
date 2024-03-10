@@ -3,6 +3,7 @@ module Control.Has where
 import Data.Kind
 import Control.Applicative
 import Control.Monad
+import Control.Monad.IO.Class
 
 
 
@@ -19,6 +20,11 @@ type instance Has m (Alt ': xs) = (Alternative m, MonadPlus m, Has m xs)
 data Fail
 
 type instance Has m (Fail ': xs) = (MonadFail m, Has m xs)
+
+
+data OS
+
+type instance Has m (OS ': xs) = (MonadIO m, Has m xs)
 
 
 data With (c :: [Constraint])

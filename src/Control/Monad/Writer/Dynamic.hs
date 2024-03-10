@@ -50,8 +50,8 @@ instance (Monoid w, MonadFail m) => MonadFail (WriterT w m) where
 instance (Monoid w, MonadIO m) => MonadIO (WriterT w m) where
     liftIO = lift . liftIO
 
-instance (Monoid w, Monad m, Alternative m) => MonadPlus (WriterT w m)
-instance (Monoid w, Monad m, Alternative m) => Alternative (WriterT w m) where
+instance (Monoid w, MonadPlus m) => MonadPlus (WriterT w m)
+instance (Monoid w, MonadPlus m) => Alternative (WriterT w m) where
     empty = WriterT empty
     WriterT ma <|> WriterT mb = WriterT (ma <|> mb)
 

@@ -42,7 +42,7 @@ instance MonadFail m => MonadFail (ReaderT r m) where
 instance MonadIO m => MonadIO (ReaderT r m) where
     liftIO = lift . liftIO
 
-instance (Monad m, Alternative m) => MonadPlus (ReaderT r m)
+instance MonadPlus m => MonadPlus (ReaderT r m)
 instance Alternative m => Alternative (ReaderT r m) where
     empty = ReaderT (const empty)
     ReaderT ma <|> ReaderT mb = ReaderT \r -> ma r <|> mb r

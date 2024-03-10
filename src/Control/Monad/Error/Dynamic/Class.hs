@@ -16,3 +16,8 @@ class Monad m => MonadError e m where
 
 liftEither :: MonadError e m => Either e a -> m a
 liftEither = either throwError pure
+
+
+instance MonadError e (Either e) where
+    throwError = Left
+    catchError f h = either h pure f

@@ -15,3 +15,6 @@ class Monad m => MonadReader r m where
 
 asks :: MonadReader r m => (r -> a) -> m a
 asks = (<$> ask)
+
+using :: MonadReader r m => r -> m a -> m a
+using = local . const

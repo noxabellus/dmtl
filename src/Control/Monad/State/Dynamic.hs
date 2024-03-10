@@ -49,8 +49,8 @@ instance MonadFail m => MonadFail (StateT s m) where
 instance MonadIO m => MonadIO (StateT s m) where
     liftIO = lift . liftIO
 
-instance (Monad m, Alternative m) => MonadPlus (StateT s m)
-instance (Monad m, Alternative m) => Alternative (StateT s m) where
+instance MonadPlus m => MonadPlus (StateT s m)
+instance MonadPlus m => Alternative (StateT s m) where
     empty = StateT (const empty)
     StateT ma <|> StateT mb = StateT \s -> ma s <|> mb s
 
